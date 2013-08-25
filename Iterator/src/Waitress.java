@@ -1,20 +1,21 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
 public class Waitress {
-	Menu pancakeHouseMenu;
-	Menu dinerMenu;
-	
-	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
-		this.pancakeHouseMenu = pancakeHouseMenu;
-		this.dinerMenu = dinerMenu;
+	ArrayList<Menu> menus;
+ 	
+	public Waitress(ArrayList<Menu> menus) {
+		this.menus = menus;
 	}
 	
 	public void printMenu() {
-		Iterator pancake =  pancakeHouseMenu.createIterator();
-		Iterator diner =  dinerMenu.createIterator();
-		printMenu(pancake);
-		printMenu(diner);
+		Iterator menuIterator = menus.iterator();
+		while (menuIterator.hasNext()) {
+			Menu menu = (Menu) menuIterator.next();
+			printMenu(menu.createIterator());
+		}
+
 	}
 	
 	private void printMenu(Iterator iterator) {
