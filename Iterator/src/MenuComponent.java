@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 
 public abstract class MenuComponent {
 	
@@ -7,16 +9,25 @@ public abstract class MenuComponent {
 	public void remove(MenuComponent menuComponent) {
 		throw new UnsupportedOperationException();
 	}
-	public void getChild(int i) {
+	public MenuComponent getChild(int i) {
 		throw new UnsupportedOperationException();
 	}	
-	public void getName() {
+	public String getName() {
 		throw new UnsupportedOperationException();
 	}	
 	public String getDescription() {
 		throw new UnsupportedOperationException();
-	}	
+	}
+	
+	public boolean isVegatarian() {
+		throw new UnsupportedOperationException();
+	}
 	public void print() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Iterator createIterator() {
+		throw new UnsupportedOperationException();
+	}
+	
 }

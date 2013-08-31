@@ -3,26 +3,25 @@ import java.util.Iterator;
 
 
 public class Waitress {
-	ArrayList<Menu> menus;
+	MenuComponent allMenus;
  	
-	public Waitress(ArrayList<Menu> menus) {
-		this.menus = menus;
+	public Waitress(MenuComponent allMenus) {
+		this.allMenus = allMenus;
 	}
 	
 	public void printMenu() {
-		Iterator menuIterator = menus.iterator();
-		while (menuIterator.hasNext()) {
-			Menu menu = (Menu) menuIterator.next();
-			printMenu(menu.createIterator());
-		}
-
+		allMenus.print();
 	}
 	
-	private void printMenu(Iterator iterator) {
-		while(iterator.hasNext()) {
-			MenuItem menuItem =  (MenuItem) iterator.next();
-			System.out.println(menuItem.getName());
-			
+	public void printVegetarian() {
+		Iterator iterator = allMenus.createIterator();
+		while (iterator.hasNext()) {
+			MenuComponent menuComponent = (MenuComponent) iterator.next();
+			try {
+				if (menuComponent.isVegatarian()) {
+					menuComponent.print();
+				}
+			} catch (UnsupportedOperationException e) {}
 		}
 	}
 

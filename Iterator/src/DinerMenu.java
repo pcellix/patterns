@@ -25,4 +25,5 @@ public class DinerMenu implements Menu {
 	public Iterator createIterator() {
 		return (Iterator) new DinerMenuIterator(menuItems);
 	}		
+
 }
