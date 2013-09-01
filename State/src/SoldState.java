@@ -31,6 +31,7 @@ public class SoldState implements State {
 		} else { 
 			System.out.println("Oops we run out balls");
 			gumballMachine.setState(gumballMachine.getSoldOutState());
+			gumballMachine.refill(10);
 		}		
 	}	
 }

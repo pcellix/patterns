@@ -36,6 +36,7 @@ public class WinnerState implements State {
 			} else {
 				System.out.println("Out of balls");
 				gumballMachine.setState(gumballMachine.getSoldOutState());
+				gumballMachine.refill(10);
 			}
 		}
 		

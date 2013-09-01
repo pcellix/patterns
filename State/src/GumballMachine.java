@@ -20,6 +20,9 @@ public class GumballMachine {
 		this.count = numberGumballs;
 		if (numberGumballs > 0) {
 			state = noQuarterState;
+		} else {
+			state = soldOutState;
+			refill(10);
 		}
 	}
 	
@@ -68,6 +71,11 @@ public class GumballMachine {
 	
 	int getCount() {
 		return count;
+	}
+	
+	void refill(int count) {
+		this.count = count;
+		state = noQuarterState;
 	}
 
 }
